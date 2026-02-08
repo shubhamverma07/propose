@@ -92,7 +92,7 @@ video{
 /* Button */
 button{
   position:absolute;
-  bottom:110px;
+  bottom:120px;
   padding:12px 30px;
   border:none;
   background:crimson;
@@ -117,3 +117,4 @@ button{
   }
 
 }
+
