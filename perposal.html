@@ -4,133 +4,11 @@
 <meta charset="UTF-8">
 <title>My Love Proposal ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="propose.css">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
-}
-
-body{
-  background:#000;
-  overflow:hidden;
-}
-
-/* Pages */
-.container{
-  display:flex;
-  width:400vw;
-  height:100vh;
-  transition:transform 1s ease;
-}
-
-.page{
-  width:100vw;
-  height:100vh;
-  flex-shrink:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  color:#fff;
-  position:relative;
-}
-
-/* Heart */
-.heart{
-  width: 100px;
-  height: 100px;
-  background:red;
-  position:relative;
-  transform:rotate(-45deg);
-  animation:beat 1s infinite;
-}
-.heart::before,
-.heart::after{
-  content:'';
-  width: 100px;
-  height: 100px;
-  background:red;
-  border-radius:50%;
-  position:absolute;
-}
-.heart::before{ top:-50px; }
-.heart::after{ left: 50px; }
-
-@keyframes beat{
-  0%,100%{ transform:rotate(-45deg) scale(1); }
-  50%{ transform:rotate(-45deg) scale(1.2); }
-}
-
-.page h1{
-  margin-top:30px;
-  text-align:center;
-  font-size:10px;
-}
-
-/* Images */
-.page img{
-  width:50%;
-  max-width:200px;
-  border-radius:20px;
-  box-shadow:0 0 30px pink;
-}
-
-/* Video */
-video{
-  width:85%;
-  max-width:320px;
-  border-radius:15px;
-}
-
-/* Gallery */
-.gallery{
-  display:flex;
-  gap:15px;
-}
-.gallery img{
-  width:100px;
-  height:140px;
-  object-fit:cover;
-  border-radius:15px;
-}
-
-/* Button */
-button{
-  position:absolute;
-  bottom:100px;
-  padding:12px 30px;
-  border:none;
-  background:crimson;
-  color:#fff;
-  border-radius:30px;
-  font-size:16px;
-  cursor:pointer;
-}
-
-/* Falling hearts */
-.heart-fall{
-  position:absolute;
-  top:-10%;
-  font-size:20px;
-  animation:fall linear infinite;
-}
-
-@keyframes fall{
-  to{
-    transform:translateY(120vh);
-    opacity:0;
-  }
-}
-
-</style>
 </head>
 
 <body onclick="playMusic()">
-
-<audio id="bgMusic" src="music/love.mp3" loop></audio>
 
 <div class="container" id="slider">
 
@@ -145,53 +23,21 @@ button{
   </div>
 
   <div class="page">
-    <img src="images/ruchi2.jpg">
+    <img src="ruchi2.jpg">
     <h1>Our Beautiful Memory 💑</h1>
     <button onclick="next()">Next 💖</button>
   </div>
 
   <div class="page">
     <div class="gallery">
-      <img src="images/ruchi4.jpg">
-      <img src="images/ruchi9.jpg">
-      <img src="images/ruchi15.jpg">
+      <img src="ruchi11.jpg">
+      <img src="ruchi9.jpg">
+      <img src="ruchi15.jpg">
     </div>
     <h1>I Love You Forever ❤️</h1>
   </div>
 
 </div>
-
-<script>
-let index = 0;
-const totalPages = 4;
-const music = document.getElementById("bgMusic");
-
-function next(){
-  if(index < totalPages - 1){
-    index++;
-    document.getElementById('slider').style.transform =
-      `translateX(-${index * 100}vw)`;
-  }
-}
-
-function playMusic(){
-  music.play();
-}
-
-/* Falling hearts */
-function createHeart(){
-  const heart = document.createElement('div');
-  heart.className = 'heart-fall';
-  heart.innerHTML = '❤️';
-  heart.style.left = Math.random()*100 + 'vw';
-  heart.style.animationDuration = (Math.random()*3+2)+'s';
-  document.body.appendChild(heart);
-  setTimeout(()=>heart.remove(),5000);
-}
-
-setInterval(createHeart,250);
-</script>
-
+<script src="propose.js"></script>
 </body>
 </html>
-
