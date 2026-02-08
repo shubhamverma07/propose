@@ -92,7 +92,7 @@ video{
 /* Button */
 button{
   position:absolute;
-  bottom:100px;
+  bottom:110px;
   padding:12px 30px;
   border:none;
   background:crimson;
@@ -115,4 +115,5 @@ button{
     transform:translateY(120vh);
     opacity:0;
   }
+
 }
